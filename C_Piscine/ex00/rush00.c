@@ -1,30 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rush00.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: perattan <perattan@student.42bangkok.      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/07/12 11:07:03 by perattan          #+#    #+#             */
+/*   Updated: 2025/07/12 11:10:04 by perattan         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <unistd.h>
+
 void	ft_putchar(char c);
 
 void	rush(int x, int y)
 {
-	int row;
-	int col;
+	int	row;
+	int	col;
 
 	if (x <= 0 || y <= 0)
 	{
 		return;					 
 	}
-	row = 0;
-	while (row < y)
+	row = 1;
+		while (row <= y)
 	{
-		col = 0;
-		while (col < x)
+		col = 1;
+		while (col <= x)
 		{
-			if	((col == 0 || col == x - 1) && (row == 0 || row == y - 1))
+			if	((col == 1 || col == x) && (row == 1 || row == y))
 			{
 				ft_putchar('o');
 			}
-			else if ((col != 0 || col != x - 1) && (row == 0 || row == y - 1))
+			else if ((col != 1 || col != x) && (row == 1 || row == y))
 			{
 				ft_putchar('-');
 			}
-			else if ((col == 0 || col == x - 1))
+			else if ((col == 1 || col == x))
 			{
 				ft_putchar('|');
 			}
